@@ -26,7 +26,7 @@ public class CommonUtil {
 
     public static void sendEmail(String to, String userMessage, String subject, String from) throws UnknownHostException, MessagingException {
         // Get system properties
-        Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+        //Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
         // Get a Properties object
         Properties props = System.getProperties();
         // Get the default Session object.
