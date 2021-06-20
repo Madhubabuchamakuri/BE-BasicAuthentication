@@ -11,6 +11,7 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import com.squareup.okhttp.*;
+import java.io.IOException;
 
 @Service
 public class CommonUtil {
