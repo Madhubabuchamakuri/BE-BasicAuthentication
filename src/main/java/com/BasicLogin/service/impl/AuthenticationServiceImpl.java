@@ -19,7 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
+import java.io.IOException;
 import javax.mail.MessagingException;
 import java.net.UnknownHostException;
 import java.util.List;
@@ -55,7 +55,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             String message = otp + " is your otp for login ";
             try {
                 CommonUtil.sendEmail(appUser.getEmail(), message, "OTP:Login", from);
-            } catch (UnknownHostException | MessagingException e) {
+            } catch (IOException | MessagingException e) {
                 ApiResponse apiResponse = new ApiResponse(HttpStatus.INTERNAL_SERVER_ERROR, "failed to send OTP",e.getMessage());
                 return new ResponseEntity<>(apiResponse, apiResponse.getStatus());
             }
