@@ -25,7 +25,7 @@ public class CommonUtil {
         protocol = protocolType;
     }
 
-    public static void sendEmail(String to, String userMessage, String subject, String from) throws UnknownHostException, MessagingException {
+    public static void sendEmail(String to, String userMessage, String subject, String from) throws IOException, MessagingException {
         // Get system properties
         //Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
         // Get a Properties object
