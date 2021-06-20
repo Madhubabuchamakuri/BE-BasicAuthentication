@@ -56,7 +56,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             try {
                 CommonUtil.sendEmail(appUser.getEmail(), message, "OTP:Login", from);
             } catch (UnknownHostException | MessagingException e) {
-                ApiResponse apiResponse = new ApiResponse(HttpStatus.OK, e.getMessage());
+                ApiResponse apiResponse = new ApiResponse(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(),e);
                 return new ResponseEntity<>(apiResponse, apiResponse.getStatus());
             }
             OTP userOtp = new OTP();
